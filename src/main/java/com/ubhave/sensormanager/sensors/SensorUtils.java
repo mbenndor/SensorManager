@@ -44,6 +44,7 @@ import com.ubhave.sensormanager.sensors.pull.GyroscopeSensor;
 import com.ubhave.sensormanager.sensors.pull.LocationSensor;
 import com.ubhave.sensormanager.sensors.pull.MagneticFieldSensor;
 import com.ubhave.sensormanager.sensors.pull.MicrophoneSensor;
+import com.ubhave.sensormanager.sensors.pull.PhoneCellSensor;
 import com.ubhave.sensormanager.sensors.pull.PhoneRadioSensor;
 import com.ubhave.sensormanager.sensors.pull.SMSContentReaderSensor;
 import com.ubhave.sensormanager.sensors.pull.StepCounterSensor;
@@ -91,7 +92,8 @@ public class SensorUtils
 	public final static int SENSOR_TYPE_MAGNETIC_FIELD = 5024;
 	public final static int SENSOR_TYPE_STEP_COUNTER = 5025;
 	public final static int SENSOR_TYPE_INTERACTION = 5026;
-	
+	public final static int SENSOR_TYPE_PHONE_CELL = 5099;
+
 	public final static String SENSOR_NAME_ACCELEROMETER = "Accelerometer";
 	public final static String SENSOR_NAME_BATTERY = "Battery";
 	public final static String SENSOR_NAME_BLUETOOTH = "Bluetooth";
@@ -118,6 +120,7 @@ public class SensorUtils
 	public final static String SENSOR_NAME_MAGNETIC_FIELD = "MagneticField";
 	public final static String SENSOR_NAME_STEP_COUNTER = "StepCounter";
 	public final static String SENSOR_NAME_INTERACTION = "Interaction";
+	public final static String SENSOR_NAME_PHONE_CELL = "PhoneCell";
 
 	private static SensorEnum getSensor(int sensorType) throws ESException
 	{
@@ -229,6 +232,8 @@ public class SensorUtils
 			return MagneticFieldSensor.getSensor(context);
 		case SENSOR_TYPE_STEP_COUNTER:
 			return StepCounterSensor.getSensor(context);
+		case SENSOR_TYPE_PHONE_CELL:
+				return  PhoneCellSensor.getPhoneCellSensor(context);
 		default:
 			throw new ESException(ESException.UNKNOWN_SENSOR_TYPE, "Unknown sensor id: " + id);
 		}
