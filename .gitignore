@@ -19,3 +19,7 @@ SensorManager.iml
 *.class
 
 *.cache
+
+.cradle/
+
+*.bin
