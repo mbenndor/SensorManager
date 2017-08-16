@@ -29,6 +29,7 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.os.SystemClock;
 
 import com.ubhave.sensormanager.ESException;
 import com.ubhave.sensormanager.config.pull.MotionSensorConfig;

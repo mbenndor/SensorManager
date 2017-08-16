@@ -38,19 +38,19 @@ import com.ubhave.sensormanager.sensors.SensorUtils;
 
 public class MicrophoneSensor extends AbstractMediaSensor
 {
-	private final static String LOG_TAG = "MicrophoneSensor";
-	private final static String AUDIO_FILE_PREFIX = "audio";
-	private final static String AUDIO_FILE_SUFFIX = ".3gpp";
-	
-	private static MicrophoneSensor microphoneSensor;
-	private static Object lock = new Object();
-	
-	private MediaRecorder recorder;
-	private File mediaFile;
-	private ArrayList<Integer> maxAmplitudeList;
-	private ArrayList<Long> timestampList;
-	private MicrophoneData micData;
-	private boolean isRecording;
+	protected final static String LOG_TAG = "MicrophoneSensor";
+	protected final static String AUDIO_FILE_PREFIX = "audio";
+	protected final static String AUDIO_FILE_SUFFIX = ".3gpp";
+
+	protected static MicrophoneSensor microphoneSensor;
+	protected static Object lock = new Object();
+
+	protected MediaRecorder recorder;
+	protected File mediaFile;
+	protected ArrayList<Integer> maxAmplitudeList;
+	protected ArrayList<Long> timestampList;
+	protected MicrophoneData micData;
+	protected boolean isRecording;
 
 	public static MicrophoneSensor getSensor(Context context) throws ESException
 	{
@@ -74,7 +74,7 @@ public class MicrophoneSensor extends AbstractMediaSensor
 		return microphoneSensor;
 	}
 
-	private MicrophoneSensor(Context context)
+	protected MicrophoneSensor(Context context)
 	{
 		super(context);
 		isRecording = false;
